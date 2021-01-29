@@ -1,0 +1,76 @@
+/*font-family: 'Raleway', sans-serif;*/
+/*font-family: 'Rock Salt', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Rock+Salt&display=swap');
+
+h1 {
+    font-family: 'Rock Salt', cursive;
+    font-size: 9em;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    color: white;
+}
+
+h5 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    -webkit-text-stroke: .4px #AD7E4B;
+    /*writing-mode: tb;*/
+    /*transform: rotate(-180deg);*/
+    color: white;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: .8em;
+    color: white;
+}
+
+.text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    color: white;
+}
+
+.contain {
+    position: relative;
+    color: white;
+    text-align: right;
+    margin-top: 18px;
+    height: 405px;
+    margin-bottom: 25px;
+}
+
+
+.brands {
+    position: relative;
+    color: white;
+    border: 2px solid #AD7E4B;
+    height: 400px;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+body {
+    background-color: #242D38;
+}
+
+.btn-color {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    background-color: #AD7E4B;
+}
+
+.logo {
+    position: absolute;
+    bottom: 4px;
+    left: 10px;
+}

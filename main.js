@@ -4,7 +4,7 @@
 function renderCoffee(coffee) {
     // keeps h1 and p together
     var html = '<div class="coffee w-50 d-inline-flex align-items-baseline mb-4">';
-    html += '<h1>' + coffee.name + '</h1>';
+    html += '<h2>' + coffee.name + '</h2>';
     html += '<p class="ml-2">' + coffee.roast + '</p>';
     html += '</div>';
 
@@ -47,34 +47,6 @@ function updateCoffees(e) {
 }
 
 
-
-// function updateCoffees(e) {
-//     e.preventDefault(); // don't submit the form, we just want to update the data
-//     var selectedRoast = roastSelection.value.toLowerCase();
-//     var selectedCoffee = coffeeSelection.value.toLowerCase();
-//     var filteredCoffees = [];
-//     var newCoffeeListing = [];
-//
-//     coffees.forEach(function(coffee) {
-//         if (coffee.roast === selectedRoast || selectedRoast === "all") {
-//             filteredCoffees.push(coffee);
-//         }
-//     });
-//     coffees.forEach(function(coffee) {
-//         if (coffee.name === selectedCoffee || name.includes(selectedCoffee)) {
-//             newCoffeeListing.push();
-//         }
-//     });
-//     coffeeList.innerHTML = renderCoffees(newCoffeeListing);
-// }
-
-
-
-
-
-
-
-
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -106,3 +78,30 @@ coffeeSelection.addEventListener('input', updateCoffees);
 
 
 
+
+
+
+
+
+
+
+
+// function updateCoffees(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     var selectedRoast = roastSelection.value.toLowerCase();
+//     var selectedCoffee = coffeeSelection.value.toLowerCase();
+//     var filteredCoffees = [];
+//     var newCoffeeListing = [];
+//
+//     coffees.forEach(function(coffee) {
+//         if (coffee.roast === selectedRoast || selectedRoast === "all") {
+//             filteredCoffees.push(coffee);
+//         }
+//     });
+//     coffees.forEach(function(coffee) {
+//         if (coffee.name === selectedCoffee || name.includes(selectedCoffee)) {
+//             newCoffeeListing.push();
+//         }
+//     });
+//     coffeeList.innerHTML = renderCoffees(newCoffeeListing);
+// }
