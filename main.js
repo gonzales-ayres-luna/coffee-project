@@ -1,6 +1,8 @@
 "use strict"
 
+
 function renderCoffee(coffee) {
+    // keeps h1 and p together
     var html = '<div class="coffee w-50 d-inline-flex align-items-baseline mb-4">';
     html += '<h1>' + coffee.name + '</h1>';
     html += '<p class="ml-2">' + coffee.roast + '</p>';
@@ -9,52 +11,68 @@ function renderCoffee(coffee) {
     return html;
 }
 
+
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = 0; i < coffees.length; i++) {
+    for (var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
+
     return html;
 }
-
-// function renderCoffees(coffees) {
-//     var html = '';
-//     for(var i = coffees.length - 1; i >= 0; i--) {
-//         html += renderCoffee(coffees[i]);
-//     }
-//     return html;
-// }
-
 
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value.toLowerCase();
-    var selectedCoffee = coffeeSelection.value;
+    var selectedCoffee = coffeeSelection.value.toLowerCase();
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast || coffee.name.toLowerCase().includes(selectedCoffee.toLowerCase())) {
-            filteredCoffees.push(coffee);
+    var newCoffeeListing = [];
+
+    for (var i = 0; i < coffees.length; i++) {
+        let roast = coffees[i].roast;
+        if (roast === selectedRoast || selectedRoast === "all") {
+            filteredCoffees.push(coffees[i]);
         }
-    });
-    coffeeList.innerHTML = renderCoffees(filteredCoffees);
+    }
+
+    for (var i = 0; i < filteredCoffees.length; i++) {
+        var name = (filteredCoffees[i].name).toLowerCase();
+        if (name === selectedCoffee || name.includes(selectedCoffee)) {
+            newCoffeeListing.push(filteredCoffees[i])
+        }
+    }
+
+    coffeeList.innerHTML = renderCoffees(newCoffeeListing);
 }
+
+
 
 // function updateCoffees(e) {
 //     e.preventDefault(); // don't submit the form, we just want to update the data
 //     var selectedRoast = roastSelection.value.toLowerCase();
-//     var selectedCoffee = coffeeSelection.value;
+//     var selectedCoffee = coffeeSelection.value.toLowerCase();
 //     var filteredCoffees = [];
+//     var newCoffeeListing = [];
+//
 //     coffees.forEach(function(coffee) {
-//         if (coffee.roast === selectedRoast || "All" === selectedRoast) {
-//             if (coffee.name.toLowerCase().includes(selectedCoffee.toLowerCase()))
-//                 filteredCoffees.push(coffee);
-//         } else if ("" === selectedCoffee) {
+//         if (coffee.roast === selectedRoast || selectedRoast === "all") {
 //             filteredCoffees.push(coffee);
 //         }
 //     });
-//     coffeeList.innerHTML = renderCoffees(filteredCoffees);
+//     coffees.forEach(function(coffee) {
+//         if (coffee.name === selectedCoffee || name.includes(selectedCoffee)) {
+//             newCoffeeListing.push();
+//         }
+//     });
+//     coffeeList.innerHTML = renderCoffees(newCoffeeListing);
 // }
+
+
+
+
+
+
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -83,3 +101,8 @@ var coffeeSelection = document.querySelector('#coffee-selection');
 coffeeList.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+roastSelection.addEventListener('change', updateCoffees);
+coffeeSelection.addEventListener('input', updateCoffees);
+
+
+
