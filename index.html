@@ -11,27 +11,40 @@
 <body>
 
 <header class="container">
-    <div class="contain">
+
+    <div class="contain-sm d-block d-lg-none">
+        <div class="brands-sm">
+            <img src="img/image-sixty-bk.jpg" alt="coffee shop">
+        </div>
+        <div>
+            <h1 class="h1-sm">Grindin</h1>
+<!--            <h5 class="h5-lg">Platinum on the block with our consistent hits</h5>-->
+        </div>
+    </div>
+
+    <div class="contain d-none d-lg-block d-md-none">
         <div class="brands">
             <img src="img/image-sixty-bk.jpg" alt="coffee shop">
         </div>
-        <div class="col logo">
-            <h1>Grindin</h1>
-            <h5>Platinum on the block with our consistent hits</h5>
+        <div>
+            <h1 class="h1-lg">Grindin</h1>
+            <h5 class="h5-lg">Platinum on the block with our consistent hits</h5>
         </div>
     </div>
+
 </header>
 
 <main class="container">
     <div class="row">
 
-        <section class="col-12 col-md-6">
+        <section class="col-12 col-lg-6">
 
             <div id="coffees" class="d-flex flex-wrap"></div>
 
         </section>
 
         <section class="col-12 col-md-6">
+
             <form>
                 <div class="form-group text">
                     <label for="roast-selection">Roast</label>
@@ -48,6 +61,25 @@
                            placeholder="Coffee Name">
                 </div>
                 <button type="submit" id="submit" class="btn btn-color">Submit</button>
+            </form>
+<!--            <hr>-->
+            <h3>New coffee suggestion? Add it below...</h3>
+            <form>
+                <div class="form-group text">
+                    <label for="roast-selection-new">Roast</label>
+                    <select class="form-control" id="roast-selection-new">
+                        <option>All</option>
+                        <option>Light</option>
+                        <option>Medium</option>
+                        <option>Dark</option>
+                    </select>
+                </div>
+                <div class="form-group text">
+                    <label for="coffee-new">Coffee Name</label>
+                    <input type="text" class="form-control autocomplete" id="coffee-new"
+                           placeholder="Coffee Name">
+                </div>
+                <button type="submit" id="submit-new" class="btn btn-color">Submit</button>
             </form>
 
         </section>
