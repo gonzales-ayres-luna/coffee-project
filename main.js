@@ -95,31 +95,3 @@ roastSelection.addEventListener('change', updateCoffees);
 coffeeSelection.addEventListener('input', updateCoffees);
 newSubmitButton.addEventListener('click', newBrew);
 
-
-
-
-
-
-
-
-
-
-// function updateCoffees(e) {
-//     e.preventDefault(); // don't submit the form, we just want to update the data
-//     var selectedRoast = roastSelection.value.toLowerCase();
-//     var selectedCoffee = coffeeSelection.value.toLowerCase();
-//     var filteredCoffees = [];
-//     var newCoffeeListing = [];
-//
-//     coffees.forEach(function(coffee) {
-//         if (coffee.roast === selectedRoast || selectedRoast === "all") {
-//             filteredCoffees.push(coffee);
-//         }
-//     });
-//     coffees.forEach(function(coffee) {
-//         if (coffee.name === selectedCoffee || name.includes(selectedCoffee)) {
-//             newCoffeeListing.push();
-//         }
-//     });
-//     coffeeList.innerHTML = renderCoffees(newCoffeeListing);
-// }
